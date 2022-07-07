@@ -1,0 +1,47 @@
+# 6052 : [기초-논리연산] 정수 입력받아 참 거짓 평가하기(설명)(py)
+n = int(input())
+print(bool(n)) # 0이면 False, 나머지는 True
+
+# 6053 : [기초-논리연산] 참 거짓 바꾸기(설명)(py)
+a = bool(int(input()))
+print(not a)
+
+# 6054 : [기초-논리연산] 둘 다 참일 경우만 참 출력하기(설명)(py)
+a, b = input().split()
+print(bool(int(a)) and bool(int(b)))
+
+# 6056 : [기초-논리연산] 참/거짓이 서로 다를 때에만 참 출력하기(설명)(py)
+a, b = input().split()
+c = bool(int(a))
+d = bool(int(b))
+print((c and (not d)) or ((not c) and d))
+
+# 6057 : [기초-논리연산] 참/거짓이 서로 같을 때에만 참 출력하기(설명)(py)
+a, b = input().split()
+c = bool(int(a))
+d = bool(int(b))
+print((not(c) and not(d)) or (c and d))
+
+# 6058 : [기초-논리연산] 둘 다 거짓일 경우만 참 출력하기(py)
+a, b = input().split()
+c = bool(int(a))
+d = bool(int(b))
+print(not(c) and not(d))
+
+# 6059 : [기초-비트단위논리연산] 비트단위로 NOT 하여 출력하기(설명)(py)
+n = int(input())
+print(~n)
+
+# 6060 : [기초-비트단위논리연산] 비트단위로 AND 하여 출력하기(설명)(py)
+''' 실제로 이 계산은 네트워크에 연결되어 있는 두 개의 컴퓨터가 데이터를 주고받기 위해 
+같은 네트워크에 있는지 아닌지를 판단하는데 사용된다.
+이러한 비트단위 연산은 빠른 계산이 필요한 그래픽처리에서
+마스크연산(특정 부분을 가리고 출력하는)을 수행하는 데에도 효과적으로 사용된다.'''
+a, b= input().split()
+print(int(a)&int(b))
+
+
+## 틀린거 ##
+# 6033 : [기초-산술연산] 문자 1개 입력받아 다음 문자 출력하기(설명)(py)
+n = ord(input()) # ord()함수가 문자열을 고유의 숫자로 바꿔줌
+print(chr(n+1))
