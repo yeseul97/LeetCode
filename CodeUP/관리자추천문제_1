@@ -1,0 +1,59 @@
+# 1173 : 30분전
+a,b = map(int, input().split())
+
+b = b-30
+if b>=0:
+    print(a,b)
+else:
+    if a==0:
+        print(23,b+60)
+    else:
+        print(a-1,b+60)  
+        
+        
+# 1278 : 자릿수 계산
+n = int(input())
+print(len(str(n)))
+
+
+# 1286 : 최댓값, 최솟값 해결
+list1=[]
+for i in range(5):
+    n = int(input())
+    list1.append(n)
+list1.sort()
+print(list1[-1])
+print(list1[0])
+
+# 1411 : 빠진 카드
+n = int(input())
+list1 = [i for i in range(1,n+1)] # 원래 카드 묶음
+for i in range(n-1): # 주어진 카드 묶음
+    list1[int(input())-1]=0 # 그 자리를 0으로
+for j in range(n):
+    if list1[j]!=0:
+        print(j+1)
+        
+# 1920 : (재귀함수) 2진수 변환
+# 방법1
+def ff(n):
+    if n//2 == 0: # 몫이 0이면 0또는 1이라는 말
+        return str(n%2)
+    return d(n//2)+str(n%2)
+n = int(input())
+# 방법2
+n = int(input())
+print(bin(n)[2:])
+print(d(n))
+
+# 1369 : 빗금 친 사각형 출력하기
+n,k = map(int, input().split())
+for i in range(1, n+1):
+    for j in range(1,n+1):
+        if i==1 or i==n or j==1 or j==n:
+            print('*', end='')
+        elif (i+j-1)%k ==0:
+            print('*',end='')
+        else:
+            print(' ', end='')
+    print()
