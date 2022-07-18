@@ -41,3 +41,19 @@ k = int(input())
 m = int(input())
 m = format(m, ',') # 포멧사용
 print(m)
+
+# 1930   
+def SuperSum(k,n):
+    if k == 0:
+        return n
+    else:
+        ssum = 0
+        for i in range(1,n+1):
+            ssum += SuperSum(k-1,i)
+        return ssum
+while True:
+    try:
+        k, n = map(int, input().split())
+        print(SuperSum(k,n))
+    except:
+        break
